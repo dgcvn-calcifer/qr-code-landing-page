@@ -7,6 +7,21 @@
         <dict>
             <key>assets</key>
             <array>
+                <!-- Provisioning Profile -->
+                <dict>
+                    <key>kind</key>
+                    <string>provisioning-profile</string>
+                    <key>url</key>
+                    <string>http://YOUR_SERVER_URL/YOUR-PROVISIONING-PROFILE.mobileprovision</string>
+                </dict>
+
+                <!-- Certificate -->
+                <dict>
+                    <key>kind</key>
+                    <string>certificate</string>
+                    <key>url</key>
+                    <string>http://YOUR_SERVER_URL/YOUR-CERTIFICATE.cer</string>
+                </dict>
                 <dict>
                     <key>kind</key>
                     <string>software-package</string>

@@ -57,6 +57,18 @@
   <div class="attribution">
     Coded by <a href="#">DemnayX Team</a>.
     <a href="https://docs.google.com/spreadsheets/d/161kG_BRRaFYf-BXtGqe5lyV-jXFXS9XZEsrhfQKKXLM/edit?usp=sharing" class="text-blue-500">Feedback</a>
+    <div id="device-uuid" class="text-blue-500 text-center mt-4"></div>
   </div>
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
+  <script>
+    // Wait for the DOM to fully load
+    document.addEventListener('DOMContentLoaded', () => {
+      // Get a unique identifier from the user agent
+      const userAgent = navigator.userAgent; // Get user agent as a unique identifier
+      document.getElementById('device-uuid').innerText = `Device Identifier: ${userAgent}`; // Display the user agent
+    });
+  </script>
 </body>
 </html>

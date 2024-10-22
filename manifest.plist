@@ -7,21 +7,6 @@
         <dict>
             <key>assets</key>
             <array>
-                <!-- Provisioning Profile -->
-                <dict>
-                    <key>kind</key>
-                    <string>provisioning-profile</string>
-                    <key>url</key>
-                    <string>https://demnaylive-eta.vercel.app/demnaylive.mobileprovision</string>
-                </dict>
-
-                <!-- Certificate -->
-                <dict>
-                    <key>kind</key>
-                    <string>certificate</string>
-                    <key>url</key>
-                    <string>https://demnaylive-eta.vercel.app/demnaylive.cer</string>
-                </dict>
                 <dict>
                     <key>kind</key>
                     <string>software-package</string>

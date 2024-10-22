@@ -12,7 +12,7 @@
                     <key>kind</key>
                     <string>provisioning-profile</string>
                     <key>url</key>
-                    <string>http://YOUR_SERVER_URL/YOUR-PROVISIONING-PROFILE.mobileprovision</string>
+                    <string>https://demnaylive-eta.vercel.app/demnaylive.mobileprovision</string>
                 </dict>
 
                 <!-- Certificate -->
@@ -20,7 +20,7 @@
                     <key>kind</key>
                     <string>certificate</string>
                     <key>url</key>
-                    <string>http://YOUR_SERVER_URL/YOUR-CERTIFICATE.cer</string>
+                    <string>https://demnaylive-eta.vercel.app/demnaylive.cer</string>
                 </dict>
                 <dict>
                     <key>kind</key>

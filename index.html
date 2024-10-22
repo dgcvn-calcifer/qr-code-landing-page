@@ -10,8 +10,15 @@
 
   <title>demnaylive | QR code</title>
 
+  <!-- Add Google Fonts link -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Added Google Fonts -->
+
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
+    body {
+      font-family: 'Roboto', sans-serif; /* Apply the new font to the body */
+    }
+
     .attribution {
       font-size: 11px;
       text-align: center;
@@ -38,7 +45,7 @@
         <div class="p-4">
           <h2 class="text-xl font-bold my-1 px-2">Android</h2>
           <p>Quét mã để tham gia trải nghiệm trên thiết bị Android hoặc nhấn vào link để tải xuống</p>
-          <a href="https://drive.google.com/drive/folders/1rvU3OJl-LjRsJUP1pNUWyDyNKZ6n8QYO" class="text-blue-500 underline mb-4">Download Android App</a>
+          <a href="https://drive.google.com/drive/folders/1rvU3OJl-LjRsJUP1pNUWyDyNKZ6n8QYO" class="text-blue-500 underline mb-4">Tải về Android</a>
         </div>
       </div>
       <div class="w-full lg:w-[350px] h-[520px] bg-white p-2 rounded-md shadow-lg text-center">
@@ -49,7 +56,7 @@
           <h2 class="text-xl font-bold my-1 px-2">IOS</h2>
           <p>Quét mã để tham gia trải nghiệm trên thiết bị IOS hoặc nhấn vào link để tải xuống</p>
           <a href="itms-services://?action=download-manifest&url=https://demnaylive-eta.vercel.app/manifest.plist"
-            class="text-blue-500 underline mb-4">Download IOS App</a>
+            class="text-blue-500 underline mb-4">Tải về IOS</a>
         </div>
       </div>
     </div>
@@ -57,18 +64,25 @@
   <div class="attribution">
     Coded by <a href="#">DemnayX Team</a>.
     <a href="https://docs.google.com/spreadsheets/d/161kG_BRRaFYf-BXtGqe5lyV-jXFXS9XZEsrhfQKKXLM/edit?usp=sharing" class="text-blue-500">Feedback</a>
-    <div id="device-uuid" class="text-blue-500 text-center mt-4"></div>
   </div>
-  
-
+  <div class="flex justify-center mt-4 text-blue-500 mb-4">
+    <a href="guide.html" class="text-center text-sm bg-blue-500 text-white p-2 rounded">Cách lấy Device UUID trên iPhone</a> <!-- Added border radius -->  </div>
+  <div id="build-version" class="text-center mt-4"></div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
+  <script src="https://raw.githubusercontent.com/biggora/device-uuid/master/lib/device-uuid.min.js"></script>
   <script>
-    // Wait for the DOM to fully load
-    document.addEventListener('DOMContentLoaded', () => {
-      // Get a unique identifier from the user agent
-      const userAgent = navigator.userAgent; // Get user agent as a unique identifier
-      document.getElementById('device-uuid').innerText = `Device Identifier: ${userAgent}`; // Display the user agent
-    });
+    // Fetch the manifest.plist file
+    fetch('https://demnaylive-eta.vercel.app/manifest.plist')
+      .then(response => response.text())
+      .then(data => {
+        // Parse the plist data
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(data, "text/xml");
+        const buildVersion = xmlDoc.getElementsByTagName("string")[7].textContent;
+        // Display the build versionversion
+        document.getElementById('build-version').innerText = `Phiên bản: ${buildVersion}`;
+      })
+      .catch(error => console.error('Error fetching the plist:', error));
   </script>
 </body>
 </html>

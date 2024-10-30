@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/1024.png">
+
+  <title>demnaylive | QR code</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Add Google Fonts link -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif; /* Apply the new font to the body */
+      background: linear-gradient(to right, #ece9e6, #ffffff); /* Add a gradient background */
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: #3e52a3;
+      background-color: #7b879d79;
+    }
+
+    img {
+      width: 200px;
+      height: 200px; 
+      object-fit: cover; 
+    }
+
+    .step-card {
+      transition: transform 0.3s, box-shadow 0.3s; 
+    }
+
+    .step-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .step-icon {
+      font-size: 2rem;
+      color: #3b82f6; 
+    }
+  </style>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    function showDialog(imageSrc) {
+      const dialog = document.createElement('div');
+      dialog.style.position = 'fixed';
+      dialog.style.top = '0';
+      dialog.style.left = '0';
+      dialog.style.width = '100%';
+      dialog.style.height = '100%';
+      dialog.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+      dialog.style.display = 'flex';
+      dialog.style.justifyContent = 'center';
+      dialog.style.alignItems = 'center';
+      dialog.style.cursor = 'zoom-out';
+      dialog.onclick = () => document.body.removeChild(dialog);
+
+      const img = document.createElement('img');
+      img.src = imageSrc;
+      img.style.maxWidth = '100%';
+      img.style.maxHeight = '100%';
+      img.style.objectFit = 'contain';
+      img.style.transition = 'transform 0.25s ease';
+      img.style.cursor = 'zoom-in';
+      img.onclick = (e) => {
+        e.stopPropagation();
+        img.style.transform = img.style.transform === 'scale(1.5)' ? 'scale(1)' : 'scale(1.5)';
+      };
+
+      dialog.appendChild(img);
+      document.body.appendChild(dialog);
+    }
+  </script>
+
+</head>
+
+<body class="bg-gray-100 p-6">
+  <div class="max-w-7xl mx-auto text-center">
+    <h1 class="text-4xl font-bold mb-8 text-gray-800">Hướng dẫn cài đặt DemnayLive trên MacOS</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+
+      <div class="bg-white rounded-lg shadow-md p-6 step-card">
+        <div class="step-icon">⚙️</div>
+        <h2 class="text-xl font-semibold mt-4">1. Nhấn 2 lần vào DemnayLive.dmg để cài đặt</h2>
+        <p class="mt-2">Ở mục "Application" nhấn vào ứng dụng DemnayLive sẽ hiển thị thông báo bảo mật ⚙️📲</p>
+        <img src="assets/mac/install.png" alt="Bảo mật Tài khoản" class="w-full max-w-xs mx-auto mt-4" onclick="window.open('assets/mac/open_anyway.png', '_blank')">
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6 step-card">
+        <div class="step-icon">🔗</div>
+        <h2 class="text-xl font-semibold mt-4">2. Mở System Settings:</h2>
+        <p class="mt-2">2. Tìm và Click vào Security & Privacy</p>
+        <img src="assets/mac/setting.png" alt="System Preferences" class="w-full max-w-xs mx-auto mt-4" onclick="window.open('assets/mac/setting.png', '_blank')">
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6 step-card">
+        <div class="step-icon">🔒</div>
+        <h2 class="text-xl font-semibold mt-4">3. Ở mục Security & Privacy</h2>
+        <p class="mt-2">Kéo xuống tiêu đề "Security" sau đó Click chọn Open Anyway ⚙️📲</p>
+        <img src="assets/mac/open_anyway.png" alt="Xác nhận Email" class="w-full max-w-xs mx-auto mt-4" onclick="window.open('assets/mac/open_anyway.png', '_blank')">
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6 step-card">
+        <div class="step-icon">🎉</div>
+        <h2 class="text-xl font-semibold mt-4">4. Nhấn Open để hoàn tất cài đặt</h2>
+        <img src="assets/mac/done.png" alt="Bảo mật Tài khoản" class="w-full max-w-xs mx-auto mt-4" onclick="window.open('assets/mac/done.png', '_blank')">
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

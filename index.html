@@ -32,6 +32,21 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Add meta description for SEO -->
+  <meta name="description" content="Join the DemnayLive experience on Android, iOS, and Mac OS. Download the app and get started today!">
+  <!-- Add meta keywords for SEO -->
+  <meta name="keywords" content="DemnayLive, QR code, Android, iOS, Mac OS, download, app">
+  <!-- Add structured data for better search engine understanding -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "DemnayLive",
+      "url": "https://demnaylive-eta.vercel.app",
+      "description": "Join the DemnayLive experience on Android, iOS, and Mac OS. Download the app and get started today!"
+    }
+  </script>
+
 </head>
 
 <body class="bg-gray-100">
@@ -46,8 +61,8 @@
           <h2 class="text-xl font-bold my-1 px-2">Android</h2>
           <p>Quét mã để tham gia trải nghiệm trên thiết bị Android hoặc nhấn vào link để tải xuống</p>
           <a href="https://drive.google.com/drive/folders/1rvU3OJl-LjRsJUP1pNUWyDyNKZ6n8QYO" class="text-blue-500 underline mb-4">Tải về Android</a>
-          <a href="guide.html"
-            class="text-blue-500 mb-4 underline">Hướng dẫn cài đặt</a>
+          <a href="guide_ios.html"
+            class="text-blue-500 mb-4">Hướng dẫn cài đặt</a>
         </div>
       </div>
       <div class="w-full lg:w-[350px] h-[600px] bg-white p-2 rounded-md shadow-lg text-center">
@@ -59,8 +74,8 @@
           <p>Quét mã để tham gia trải nghiệm trên thiết bị IOS hoặc nhấn vào link để tải xuống</p>
           <a href="itms-services://?action=download-manifest&url=https://demnaylive-eta.vercel.app/manifest.plist"
             class="text-blue-500 underline mb-4">Tải về IOS</a>
-            <a href="guide.html"
-            class="text-blue-500 mb-4 underline">Hướng dẫn cài đặt</a>
+            <a href="guide_ios.html"
+            class="text-blue-500 mb-4">Hướng dẫn cài đặt</a>
         </div>
       </div>
       <div class="w-full lg:w-[350px] h-[600px] bg-white p-2 rounded-md shadow-lg text-center">
@@ -72,8 +87,8 @@
           <p>Quét mã để tham gia trải nghiệm trên thiết bị Macbook hoặc nhấn vào link để tải xuống</p>
           <a href="https://demnaylive-eta.vercel.app/demnayLive.dmg" download
           class="text-blue-500 underline mb-4">Tải về MacOS</a>
-          <a href="guide.html"
-            class="text-blue-500 mb-4 underline">Hướng dẫn cài đặt</a>
+          <a href="guide_mac.html"
+            class="text-blue-500 mb-4">Hướng dẫn cài đặt</a>
         </div>
       </div>
     </div>
@@ -82,9 +97,9 @@
     Coded by <a href="#">DemnayX Team</a>.
     <a href="https://docs.google.com/spreadsheets/d/161kG_BRRaFYf-BXtGqe5lyV-jXFXS9XZEsrhfQKKXLM/edit?usp=sharing" class="text-blue-500">Feedback</a>
   </div>
-  <div class="flex justify-center mt-4 text-blue-500 mb-4">
-    <a href="guide.html" class="text-center text-sm bg-blue-500 text-white p-2 rounded">Cách lấy Device UUID trên iPhone</a>
-  </div>
+  <!-- <div class="flex justify-center mt-4 text-blue-500 mb-4">
+    <a href="guide_ios.html" class="text-center text-sm bg-blue-500 text-white p-2 rounded">Cách lấy Device UUID trên iPhone</a>
+  </div> -->
   <div id="build-version" class="text-center mt-4"></div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
   <script src="https://raw.githubusercontent.com/biggora/device-uuid/master/lib/device-uuid.min.js"></script>
